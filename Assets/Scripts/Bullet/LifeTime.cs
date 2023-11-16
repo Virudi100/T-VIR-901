@@ -16,7 +16,7 @@ public class LifeTime : MonoBehaviour
 
     IEnumerator Dying()
     {
-        isDying = true;                 //set le booleen à vrai pour évité le lancé plusieurs fois la séquence
+        //isDying = true;                 //set le booleen à vrai pour évité le lancé plusieurs fois la séquence
         int i = 0;                      // le int i, sert ici de cooldown actificiel auquel on va rajouter 1 a chaque passage de la boucle
         
         while(i < cooldown)             // tant que le i n'est pas egale au cooldown souhaité on lui rajoute 1 avec 1 secondes de pause entre chaque ajout
