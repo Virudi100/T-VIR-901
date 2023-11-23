@@ -10,31 +10,27 @@ public class BulletRebond : MonoBehaviour
     {
         if (!rebonded)
         {
-            if (other.CompareTag("Prisme2PenteDroite"))
+            if (other.CompareTag("Prisme2Pente"))
             {
                 gameObject.GetComponent<Rigidbody>().AddForce(Vector3.up * other.transform.parent.gameObject.GetComponent<IndiceDeRefraction>().iDR * 50);
                 gameObject.GetComponent<MeshRenderer>().material.color = other.transform.parent.gameObject.GetComponent<IndiceDeRefraction>().refractionColor;
                 rebonded = true;
             }
-            else if (other.CompareTag("Prisme2PenteGauche"))
+
+            if (other.CompareTag("PrismePenteGauche"))
             {
-                gameObject.GetComponent<Rigidbody>().AddForce(Vector3.up * other.transform.parent.gameObject.GetComponent<IndiceDeRefraction>().iDR * 50);
-                gameObject.GetComponent<MeshRenderer>().material.color = other.transform.parent.gameObject.GetComponent<IndiceDeRefraction>().refractionColor;
+                gameObject.GetComponent<Rigidbody>().AddForce(Vector3.up * other.transform.parent.gameObject.transform.parent.GetComponent<IndiceDeRefraction>().iDR * 50);
+                gameObject.GetComponent<Rigidbody>().AddForce(Vector3.left * other.transform.parent.gameObject.transform.parent.GetComponent<IndiceDeRefraction>().iDR * 50);
+                gameObject.GetComponent<MeshRenderer>().material.color = other.transform.parent.gameObject.transform.parent.GetComponent<IndiceDeRefraction>().refractionColor;
                 rebonded = true;
-
             }
-            /*else if (other.CompareTag("Prisme2Dessous"))
+            if (other.CompareTag("PrismePenteDroite"))
             {
-
+                gameObject.GetComponent<Rigidbody>().AddForce(Vector3.up * other.transform.parent.gameObject.transform.parent.GetComponent<IndiceDeRefraction>().iDR * 50);
+                gameObject.GetComponent<Rigidbody>().AddForce(Vector3.right * other.transform.parent.gameObject.transform.parent.GetComponent<IndiceDeRefraction>().iDR * 50);
+                gameObject.GetComponent<MeshRenderer>().material.color = other.transform.parent.gameObject.transform.parent.GetComponent<IndiceDeRefraction>().refractionColor;
+                rebonded = true;
             }
-            else if (other.CompareTag("Prisme2Avant"))
-            {
-
-            }
-            else if (other.CompareTag("Prisme2Arriere"))
-            {
-
-            }*/
         }
     }
 }

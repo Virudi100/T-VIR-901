@@ -6,11 +6,9 @@ TagManager:
   tags:
   - Prisme
   - Prime2
-  - Prisme2PenteDroite
-  - Prisme2PenteGauche
-  - Prisme2Dessous
-  - Prisme2Arriere
-  - Primes2Avant
+  - Prisme2Pente
+  - PrismePenteGauche
+  - PrismePenteDroite
   layers:
   - Default
   - TransparentFX
