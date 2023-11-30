@@ -83,8 +83,44 @@ PrefabInstance:
       propertyPath: m_Name
       value: PrismMenu Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 8771642256541016290, guid: f26d669ccf12cdb4cae6e57240c03a34,
+        type: 3}
+      propertyPath: m_TagString
+      value: Prisme
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8771642256541016290, guid: f26d669ccf12cdb4cae6e57240c03a34,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7171035103567433174}
   m_SourcePrefab: {fileID: 100100000, guid: f26d669ccf12cdb4cae6e57240c03a34, type: 3}
+--- !u!1 &3115401048858482348 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8771642256541016290, guid: f26d669ccf12cdb4cae6e57240c03a34,
+    type: 3}
+  m_PrefabInstance: {fileID: 5946724680797271630}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &7171035103567433174
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3115401048858482348}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.03, y: 0.03, z: 0.03}
+  m_Center: {x: -0.002155122, y: 0, z: 0}
