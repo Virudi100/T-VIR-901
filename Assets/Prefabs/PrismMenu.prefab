@@ -112,7 +112,7 @@ GameObject:
   - component: {fileID: 7114524507162886455}
   - component: {fileID: 3365085260625667262}
   m_Layer: 0
-  m_Name: PrismPrefab
+  m_Name: PrismMenu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

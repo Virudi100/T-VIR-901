@@ -7,11 +7,12 @@ public class CustomImageTracker : MonoBehaviour
     [SerializeField] private ARTrackedImageManager manager;
 
     [Header("Prefabs")]
-    [SerializeField] private GameObject laserPrefab;
-    [SerializeField] private GameObject prismPrefab;
+    [SerializeField] private GameObject[] laserArray;
+    [SerializeField] private GameObject[] prismeArray;
 
-    private GameObject laserPrefabInstance;
-    private GameObject prismPrefabInstance;
+    private GameObject newLaser;
+    private GameObject newPrisme;
+
 
     private void OnEnable()
     {
@@ -27,33 +28,33 @@ public class CustomImageTracker : MonoBehaviour
     {
         foreach (ARTrackedImage addedImg in args.added)
         {
-            if (addedImg.referenceImage.name == laserPrefab.name)
+            if (addedImg.referenceImage.name == "Laser")
             {
-                laserPrefabInstance = Instantiate(laserPrefab, addedImg.transform.position, addedImg.transform.rotation);
+                newLaser = Instantiate(laserArray[0], addedImg.transform.position, addedImg.transform.rotation);
             }
-            else if (addedImg.referenceImage.name == prismPrefab.name)
+            else if (addedImg.referenceImage.name == "Prism")
             {
-                prismPrefabInstance = Instantiate(prismPrefab, addedImg.transform.position, addedImg.transform.rotation);
+                newPrisme = Instantiate(prismeArray[0], addedImg.transform.position, addedImg.transform.rotation);
             }
         }
         foreach (ARTrackedImage updatedImg in args.updated)
         {
-            if (updatedImg.referenceImage.name == laserPrefab.name)
+            if (updatedImg.referenceImage.name == "Laser")
             {
                 updatedImg.transform.GetPositionAndRotation(out Vector3 position, out Quaternion rotation);
-                laserPrefabInstance.transform.SetPositionAndRotation(position, rotation);
+                newLaser.transform.SetPositionAndRotation(position, rotation);
             }
-            else if (updatedImg.referenceImage.name == prismPrefab.name)
+            else if (updatedImg.referenceImage.name == "Prism")
             {
                 updatedImg.transform.GetPositionAndRotation(out Vector3 position, out Quaternion rotation);
-                prismPrefabInstance.transform.SetPositionAndRotation(position, rotation);
+                newPrisme.transform.SetPositionAndRotation(position, rotation);
             }
         }
-        foreach (ARTrackedImage removedImg in args.removed)
+        /*foreach (ARTrackedImage removedImg in args.removed)
         {
             if (removedImg.referenceImage.name == laserPrefab.name) laserPrefabInstance.SetActive(false);
             else if (removedImg.referenceImage.name == prismPrefab.name) prismPrefabInstance.SetActive(false);
 
-        }
+        }*/
     }
 }
