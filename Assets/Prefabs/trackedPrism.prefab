@@ -13,6 +13,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: trackedPrism
       objectReference: {fileID: 0}
+    - target: {fileID: 4793274014018865601, guid: d5ef67322cd9d5747b256cf5bd7684f8,
+        type: 3}
+      propertyPath: m_TagString
+      value: Prisme
+      objectReference: {fileID: 0}
     - target: {fileID: 5318454281014399867, guid: d5ef67322cd9d5747b256cf5bd7684f8,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -86,5 +91,36 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4793274014018865601, guid: d5ef67322cd9d5747b256cf5bd7684f8,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: -1740261855651361683}
   m_SourcePrefab: {fileID: 100100000, guid: d5ef67322cd9d5747b256cf5bd7684f8, type: 3}
+--- !u!1 &7301515048762364636 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4793274014018865601, guid: d5ef67322cd9d5747b256cf5bd7684f8,
+    type: 3}
+  m_PrefabInstance: {fileID: 2869092105346800413}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &-1740261855651361683
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7301515048762364636}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.05, y: 0.05, z: 0.05}
+  m_Center: {x: 1.736935e-17, y: 0, z: 0.0033333346}
