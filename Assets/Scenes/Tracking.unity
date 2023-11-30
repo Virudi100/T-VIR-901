@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641258, b: 0.574817, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -320,7 +320,7 @@ Transform:
   m_GameObject: {fileID: 45862674}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 3}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -339,10 +339,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   manager: {fileID: 45862675}
-  laserPrefab: {fileID: 4720154390789152746, guid: 71c36c1b9abca74479a078919e59dfe8,
-    type: 3}
-  prismPrefab: {fileID: 7301515048762364636, guid: 02a0cc6a53ae1bb4e9b8cf0dba050a08,
-    type: 3}
+  laserArray:
+  - {fileID: 8357743357663558279, guid: ccba2415476bf354d9a2e9c3a38aa705, type: 3}
+  prismeArray:
+  - {fileID: 3115401048858482348, guid: 6bb5b008ba8cfde428417d19eab4d07e, type: 3}
 --- !u!1 &420409529
 GameObject:
   m_ObjectHideFlags: 0
