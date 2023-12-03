@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PrismTouchHandler : MonoBehaviour
 {
@@ -33,7 +34,7 @@ public class PrismTouchHandler : MonoBehaviour
                     {
                         Debug.Log("Prisme touché");
 
-                        prismPanel.SetActive(true);
+                        prismPanel.SetActive(true);                     
                     }
                 }
             }
