@@ -1,3 +1,4 @@
+using System.Numerics;
 using UnityEngine;
 using UnityEngine.XR.ARFoundation;
 
@@ -30,24 +31,22 @@ public class CustomImageTracker : MonoBehaviour
         {
             if (addedImg.referenceImage.name == "Laser")
             {
-                newLaser = Instantiate(laserArray[0], addedImg.transform.position, addedImg.transform.rotation);
+                newLaser = Instantiate(laserArray[0], addedImg.transform.position, UnityEngine.Quaternion.identity);
             }
             else if (addedImg.referenceImage.name == "Prism")
             {
-                newPrisme = Instantiate(prismeArray[0], addedImg.transform.position, addedImg.transform.rotation);
+                newPrisme = Instantiate(prismeArray[0], addedImg.transform.position, UnityEngine.Quaternion.identity);
             }
         }
         foreach (ARTrackedImage updatedImg in args.updated)
         {
             if (updatedImg.referenceImage.name == "Laser")
             {
-                updatedImg.transform.GetPositionAndRotation(out Vector3 position, out Quaternion rotation);
-                newLaser.transform.SetPositionAndRotation(position, rotation);
+                newLaser.transform.position = transform.position;
             }
             else if (updatedImg.referenceImage.name == "Prism")
             {
-                updatedImg.transform.GetPositionAndRotation(out Vector3 position, out Quaternion rotation);
-                newPrisme.transform.SetPositionAndRotation(position, rotation);
+                newPrisme.transform.position = updatedImg.transform.position;
             }
         }
         /*foreach (ARTrackedImage removedImg in args.removed)

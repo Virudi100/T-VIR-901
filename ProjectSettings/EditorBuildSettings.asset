@@ -14,9 +14,12 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/Tracking.unity
     guid: 2ad4677994ae398429701d75d3ea299e
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/UI.unity
     guid: 1a579733928e0884babd1c9885711786
+  - enabled: 1
+    path: Assets/New Scene.unity
+    guid: 6c9493ee5d3a7a149b3059a2505ac55d
   m_configObjects:
     Unity.XR.WindowsMR.Settings: {fileID: 11400000, guid: 744b813df90924c169af73489b8325de,
       type: 2}
