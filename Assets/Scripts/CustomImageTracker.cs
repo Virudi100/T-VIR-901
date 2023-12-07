@@ -42,7 +42,7 @@ public class CustomImageTracker : MonoBehaviour
         {
             if (updatedImg.referenceImage.name == "Laser")
             {
-                newLaser.transform.position = transform.position;
+                newLaser.transform.position = updatedImg.transform.position;
             }
             else if (updatedImg.referenceImage.name == "Prism")
             {

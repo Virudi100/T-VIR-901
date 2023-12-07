@@ -123,18 +123,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &35728806 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8375411942896995246, guid: ebab03693e66bd24eaf3a2c3e99ad6b0,
-    type: 3}
-  m_PrefabInstance: {fileID: 3002844699656524104}
-  m_PrefabAsset: {fileID: 0}
---- !u!20 &35728807 stripped
-Camera:
-  m_CorrespondingSourceObject: {fileID: 2269259101040038555, guid: ebab03693e66bd24eaf3a2c3e99ad6b0,
-    type: 3}
-  m_PrefabInstance: {fileID: 3002844699656524104}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &572854921
 GameObject:
   m_ObjectHideFlags: 0
@@ -373,16 +361,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1677916815258979677, guid: 20ca710f79e223e4798a1451b894e307,
-        type: 3}
-      propertyPath: m_Camera
-      value: 
-      objectReference: {fileID: 35728807}
-    - target: {fileID: 1677916815258979677, guid: 20ca710f79e223e4798a1451b894e307,
-        type: 3}
-      propertyPath: m_CameraFloorOffsetObject
-      value: 
-      objectReference: {fileID: 35728806}
     - target: {fileID: 5941313409045388973, guid: 20ca710f79e223e4798a1451b894e307,
         type: 3}
       propertyPath: m_LocalPosition.x
