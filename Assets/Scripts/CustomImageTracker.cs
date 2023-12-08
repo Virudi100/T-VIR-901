@@ -33,27 +33,34 @@ public class CustomImageTracker : MonoBehaviour
             {
                 newLaser = Instantiate(laserArray[0], addedImg.transform.position, UnityEngine.Quaternion.identity);
             }
-            else if (addedImg.referenceImage.name == "Prism")
+            if (addedImg.referenceImage.name == "Prism")
             {
                 newPrisme = Instantiate(prismeArray[0], addedImg.transform.position, UnityEngine.Quaternion.identity);
             }
         }
+
         foreach (ARTrackedImage updatedImg in args.updated)     //Le temps que l'image reste détecté
         {
             if (updatedImg.referenceImage.name == "Laser")
             {
                 newLaser.transform.position = updatedImg.transform.position;
             }
-            else if (updatedImg.referenceImage.name == "Prism")
+            if (updatedImg.referenceImage.name == "Prism")
             {
                 newPrisme.transform.position = updatedImg.transform.position;
             }
         }
-        /*foreach (ARTrackedImage removedImg in args.removed)   //Quand l'image n'est plus détecté
-        {
-            if (removedImg.referenceImage.name == laserPrefab.name) laserPrefabInstance.SetActive(false);
-            else if (removedImg.referenceImage.name == prismPrefab.name) prismPrefabInstance.SetActive(false);
 
-        }*/
+        foreach (ARTrackedImage removedImg in args.removed)   //Quand l'image n'est plus détecté
+        {
+            if (removedImg.referenceImage.name == "Laser")
+            {
+                Destroy(newLaser);
+            }
+            if (removedImg.referenceImage.name == "Prism")
+            {
+                Destroy(newPrisme);
+            }
+        }
     }
 }
