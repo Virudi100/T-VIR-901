@@ -10,6 +10,7 @@ TagManager:
   - PrismePenteGauche
   - PrismePenteDroite
   - PrismSlider
+  - PrismPanel
   layers:
   - Default
   - TransparentFX

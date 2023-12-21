@@ -16,9 +16,13 @@ public class PrismTouchHandler : MonoBehaviour
 
     [HideInInspector] public GameObject selectedPrime;
 
+
     void Start()
     {
+
         menuGameobject.SetActive(false);
+
+
     }
 
     private void FixedUpdate()
@@ -50,7 +54,7 @@ public class PrismTouchHandler : MonoBehaviour
 
     public void ChangeToDiamond()
     {
-        if(selectedPrime != null)
+        if (selectedPrime != null)
         {
             selectedPrime.GetComponent<MeshRenderer>().material = diamondMat;
         }
@@ -58,7 +62,7 @@ public class PrismTouchHandler : MonoBehaviour
 
     public void ChangeToGlass()
     {
-        if(selectedPrime != null)
+        if (selectedPrime != null)
         {
             selectedPrime.GetComponent<MeshRenderer>().material = glassMat;
         }
