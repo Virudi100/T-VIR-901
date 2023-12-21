@@ -10,7 +10,7 @@ public class StartLazer : MonoBehaviour
     [SerializeField] private GameObject bullet;             //Stockage du modèle de la balle via la fenetre inspector de Unity
     
     private bool isShooting = false;                        //Permet d'arreter de tiré (à utiliser plus tard)
-    private int speed = 200;                                //Vitesse d'éjection de la balle
+    private int speed = 5;                                //Vitesse d'éjection de la balle
 
     // Start is called before the first frame update
     void Start()

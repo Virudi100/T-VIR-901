@@ -5,17 +5,23 @@ using UnityEngine.UI;
 
 public class PrismTouchHandler : MonoBehaviour
 {
-    public GameObject prismPanel;
-    public Camera arCamera;
+    [Header("Setup")]
+    [SerializeField] private GameObject menuGameobject;
+    [SerializeField] private Camera arCamera;
 
+    [Header("Matérials")]
+    [SerializeField] private Material diamondMat;
+    [SerializeField] private Material glassMat;
+
+
+    [HideInInspector] public GameObject selectedPrime;
 
     void Start()
     {
-        prismPanel.SetActive(false);
+        menuGameobject.SetActive(false);
     }
 
-
-    void Update()
+    private void FixedUpdate()
     {
         if (Input.touchCount > 0)
         {
@@ -34,10 +40,27 @@ public class PrismTouchHandler : MonoBehaviour
                     {
                         Debug.Log("Prisme touché");
 
-                        prismPanel.SetActive(true);                     
+                        menuGameobject.SetActive(true);
+                        selectedPrime = hit.collider.gameObject;
                     }
                 }
             }
+        }
+    }
+
+    public void ChangeToDiamond()
+    {
+        if(selectedPrime != null)
+        {
+            selectedPrime.GetComponent<MeshRenderer>().material = diamondMat;
+        }
+    }
+
+    public void ChangeToGlass()
+    {
+        if(selectedPrime != null)
+        {
+            selectedPrime.GetComponent<MeshRenderer>().material = glassMat;
         }
     }
 }
