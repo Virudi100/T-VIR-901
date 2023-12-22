@@ -8,29 +8,21 @@ public class SliderText : MonoBehaviour
 {
     [SerializeField] private Slider _slider;
     [SerializeField] private TextMeshProUGUI _sliderText;
-    [SerializeField] private GameObject _prism;
-    private float _prismInitialScale;
+    [SerializeField] private PrismTouchHandler touchhandler;
 
-    // Start is called before the first frame update
-    void Start()
+    public void Start()
     {
-        // retrive prism with tag
-        string prismTag = _prism.gameObject.tag;
-        if (prismTag.Equals("Prisme"))
-        {
-            _prismInitialScale = _prism.transform.localScale.x;
-            _sliderText.text = "Size: " + _prismInitialScale.ToString();
-
-        }
-
-
-
-        _slider.onValueChanged.AddListener((v) =>
-        {
-            
-            _sliderText.text = "Size: " + v.ToString("0");
-        });
+        //Adds a listener to the main slider and invokes a method when the value changes.
+        _slider.onValueChanged.AddListener(delegate { ValueChangeCheck(); });
     }
 
-    
+    // Invoked when the value of the slider changes.
+    public void ValueChangeCheck()
+    {
+        Debug.Log(_slider.value);
+        touchhandler.selectedPrime.gameObject.transform.localScale = new Vector3(_slider.value, _slider.value, _slider.value);
+        _sliderText.text = "Size: " + _slider.value.ToString();
+    }
+
+
 }
