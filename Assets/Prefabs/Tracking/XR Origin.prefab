@@ -12,8 +12,6 @@ GameObject:
   - component: {fileID: 1677916815258979677}
   - component: {fileID: 6115312187108837128}
   - component: {fileID: 8460522707881421574}
-  - component: {fileID: 4588615495394171111}
-  - component: {fileID: 5945841705773996643}
   m_Layer: 0
   m_Name: XR Origin
   m_TagString: Untagged
@@ -86,35 +84,3 @@ MonoBehaviour:
   - {fileID: 8357743357663558279, guid: ccba2415476bf354d9a2e9c3a38aa705, type: 3}
   prismeArray:
   - {fileID: 3115401048858482348, guid: 6bb5b008ba8cfde428417d19eab4d07e, type: 3}
---- !u!114 &4588615495394171111
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8559542023318967051}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8ad99c76285475448bfcbe5e5157f1b2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  menuGameobject: {fileID: 0}
-  arCamera: {fileID: 0}
-  diamondMat: {fileID: 2100000, guid: 7fbb55821b80a7f4babc85df3ecdffa0, type: 2}
-  glassMat: {fileID: 2100000, guid: 8ce8095b1910d1642b9530ab024223a2, type: 2}
-  selectedPrime: {fileID: 0}
---- !u!114 &5945841705773996643
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8559542023318967051}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 78806c955283203439839058affffa28, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  menuGameObject: {fileID: 0}
-  arCamera: {fileID: 0}
-  selectedLaser: {fileID: 0}

@@ -6,7 +6,8 @@ using UnityEngine.UI;
 public class PrismTouchHandler : MonoBehaviour
 {
     [Header("Setup")]
-    [SerializeField] private GameObject menuGameobject;
+    [SerializeField] private GameObject menuPrismeGameobject;
+    [SerializeField] private GameObject menuLaserGameobject;
     [SerializeField] private Camera arCamera;
 
     [Header("Matérials")]
@@ -15,12 +16,14 @@ public class PrismTouchHandler : MonoBehaviour
 
 
     [HideInInspector] public GameObject selectedPrime;
+    [HideInInspector] public GameObject selectedLaser;
 
 
     void Start()
     {
 
-        menuGameobject.SetActive(false);
+        menuPrismeGameobject.SetActive(false);
+        menuLaserGameobject.SetActive(false);
 
 
     }
@@ -44,8 +47,14 @@ public class PrismTouchHandler : MonoBehaviour
                     {
                         Debug.Log("Prisme touché");
 
-                        menuGameobject.SetActive(true);
+                        menuPrismeGameobject.SetActive(true);
                         selectedPrime = hit.collider.gameObject;
+                    }
+
+                    if (hit.collider.tag == "Laser")
+                    {
+                        menuLaserGameobject.SetActive(true);
+                        selectedLaser = hit.collider.gameObject;
                     }
                 }
             }
