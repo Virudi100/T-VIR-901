@@ -11,6 +11,7 @@ TagManager:
   - PrismePenteDroite
   - PrismSlider
   - PrismPanel
+  - Laser
   layers:
   - Default
   - TransparentFX
