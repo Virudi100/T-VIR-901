@@ -18,6 +18,9 @@ public class PrismTouchHandler : MonoBehaviour
     [HideInInspector] public GameObject selectedPrime;
     [HideInInspector] public GameObject selectedLaser;
 
+    public bool isLaser = false;
+    public bool isPrism = false;
+
 
     void Start()
     {
@@ -46,6 +49,8 @@ public class PrismTouchHandler : MonoBehaviour
                     if (hit.collider.tag == "Prisme")
                     {
                         Debug.Log("Prisme touché");
+                        isPrism = true;
+                        isLaser = false;
 
                         menuPrismeGameobject.SetActive(true);
                         selectedPrime = hit.collider.gameObject;
@@ -53,6 +58,8 @@ public class PrismTouchHandler : MonoBehaviour
 
                     if (hit.collider.tag == "Laser")
                     {
+                        isLaser = true;
+                        isPrism = false;
                         menuLaserGameobject.SetActive(true);
                         selectedLaser = hit.collider.gameObject;
                     }

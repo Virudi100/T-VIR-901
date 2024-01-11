@@ -12,6 +12,8 @@ TagManager:
   - PrismSlider
   - PrismPanel
   - Laser
+  - Bullet
+  - Handle
   layers:
   - Default
   - TransparentFX

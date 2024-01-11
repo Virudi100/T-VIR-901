@@ -20,8 +20,17 @@ public class SliderText : MonoBehaviour
     public void ValueChangeCheck()
     {
         Debug.Log(_slider.value);
-        touchhandler.selectedPrime.gameObject.transform.localScale = new Vector3(_slider.value, _slider.value, _slider.value);
-        _sliderText.text = "Size: " + _slider.value.ToString();
+        if (touchhandler.isLaser == true) {
+            touchhandler.selectedLaser.gameObject.transform.localScale = new Vector3(_slider.value, _slider.value, _slider.value);
+            _sliderText.text = "Size: " + _slider.value.ToString();
+        }
+
+        if(touchhandler.isPrism == true)
+        {
+            touchhandler.selectedPrime.gameObject.transform.localScale = new Vector3(_slider.value, _slider.value, _slider.value);
+            _sliderText.text = "Size: " + _slider.value.ToString();
+        }
+        
     }
 
 
