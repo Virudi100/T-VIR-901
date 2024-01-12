@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1677916815258979677}
   - component: {fileID: 6115312187108837128}
   - component: {fileID: 8460522707881421574}
+  - component: {fileID: 218047744194477035}
   m_Layer: 0
   m_Name: XR Origin
   m_TagString: Untagged
@@ -80,7 +81,44 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   manager: {fileID: 6115312187108837128}
-  laserArray:
-  - {fileID: 8357743357663558279, guid: ccba2415476bf354d9a2e9c3a38aa705, type: 3}
-  prismeArray:
+  baseLaser: {fileID: 8357743357663558279, guid: ccba2415476bf354d9a2e9c3a38aa705,
+    type: 3}
+  basePrism: {fileID: 3115401048858482348, guid: 6bb5b008ba8cfde428417d19eab4d07e,
+    type: 3}
+  newLaser: {fileID: 0}
+  newPrisme: {fileID: 0}
+--- !u!114 &218047744194477035
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8559542023318967051}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ad99c76285475448bfcbe5e5157f1b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  imageTrackeur: {fileID: 8460522707881421574}
+  menuPrismeGameobject: {fileID: 0}
+  menuLaserGameobject: {fileID: 0}
+  arCamera: {fileID: 0}
+  PrismMat:
+  - {fileID: 2100000, guid: 8ce8095b1910d1642b9530ab024223a2, type: 2}
+  - {fileID: 2100000, guid: 7fbb55821b80a7f4babc85df3ecdffa0, type: 2}
+  - {fileID: 2100000, guid: b2936c180a7a86c4397840b159423ef5, type: 2}
+  - {fileID: 2100000, guid: 75a2e40c1d996a1468a61a9df0414d94, type: 2}
+  - {fileID: 2100000, guid: 17bb0809b487886448c45e983640e34b, type: 2}
+  - {fileID: 2100000, guid: 29fcb25de6f99d144980fcb0e6141a28, type: 2}
+  prisms:
   - {fileID: 3115401048858482348, guid: 6bb5b008ba8cfde428417d19eab4d07e, type: 3}
+  - {fileID: 4793274014018865601, guid: d5ef67322cd9d5747b256cf5bd7684f8, type: 3}
+  - {fileID: 5250191657374267015, guid: ceecf2ab85b708646bdbe92a977acd02, type: 3}
+  lasers:
+  - {fileID: 8357743357663558279, guid: ccba2415476bf354d9a2e9c3a38aa705, type: 3}
+  - {fileID: 6344139564555257565, guid: 9a864ca8fea7318429e91ba16ccc7c6e, type: 3}
+  - {fileID: 5411937918791974883, guid: 73f1e6a3d46ffed4e865e59978bf88b8, type: 3}
+  selectedPrime: {fileID: 0}
+  selectedLaser: {fileID: 0}
+  isLaser: 0
+  isPrism: 0

@@ -920,7 +920,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 994940557}
         m_TargetAssemblyTypeName: PrismTouchHandler, Assembly-CSharp
-        m_MethodName: ChangeToDiamond
+        m_MethodName: ChangeToLaser3
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1480,7 +1480,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 994940557}
         m_TargetAssemblyTypeName: PrismTouchHandler, Assembly-CSharp
-        m_MethodName: ChangeToRuby
+        m_MethodName: ChangeToPrism3
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1655,7 +1655,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 994940557}
         m_TargetAssemblyTypeName: PrismTouchHandler, Assembly-CSharp
-        m_MethodName: ChangeToGlass
+        m_MethodName: ChangeToLaser1
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2025,7 +2025,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 702345839}
+  m_Material: {fileID: 1937556651}
   m_Color: {r: 0.9882353, g: 0.9882353, b: 0.9882353, a: 0.78431374}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
@@ -3117,45 +3117,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 680142280}
   m_CullTransparentMesh: 1
---- !u!21 &702345839
-Material:
-  serializedVersion: 8
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: UI/RoundedCorners/RoundedCorners
-  m_Shader: {fileID: 4800000, guid: 0bd2ec5d73751e34a814274a454bec41, type: 3}
-  m_Parent: {fileID: 0}
-  m_ModifiedSerializedProperties: 0
-  m_ValidKeywords: []
-  m_InvalidKeywords: []
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_LockedProperties: 
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - _MainTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Ints: []
-    m_Floats:
-    - _ColorMask: 15
-    - _Stencil: 0
-    - _StencilComp: 8
-    - _StencilOp: 0
-    - _StencilReadMask: 255
-    - _StencilWriteMask: 255
-    - _UseUIAlphaClip: 0
-    m_Colors:
-    - _WidthHeightRadius: {r: 1024, g: 500, b: 40, a: 0}
-  m_BuildTextureStacks: []
 --- !u!1 &860600801
 GameObject:
   m_ObjectHideFlags: 0
@@ -3493,38 +3454,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 897933839}
   m_CullTransparentMesh: 1
---- !u!1 &994940552 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8559542023318967051, guid: 20ca710f79e223e4798a1451b894e307,
+--- !u!114 &994940557 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 218047744194477035, guid: 20ca710f79e223e4798a1451b894e307,
     type: 3}
   m_PrefabInstance: {fileID: 1226836697}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &994940557
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 994940552}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8ad99c76285475448bfcbe5e5157f1b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  menuPrismeGameobject: {fileID: 602179603}
-  menuLaserGameobject: {fileID: 2092700403}
-  arCamera: {fileID: 1579249548}
-  PrismMat:
-  - {fileID: 2100000, guid: 8ce8095b1910d1642b9530ab024223a2, type: 2}
-  - {fileID: 2100000, guid: 7fbb55821b80a7f4babc85df3ecdffa0, type: 2}
-  - {fileID: 2100000, guid: b2936c180a7a86c4397840b159423ef5, type: 2}
-  - {fileID: 2100000, guid: 75a2e40c1d996a1468a61a9df0414d94, type: 2}
-  - {fileID: 2100000, guid: 17bb0809b487886448c45e983640e34b, type: 2}
-  - {fileID: 2100000, guid: 29fcb25de6f99d144980fcb0e6141a28, type: 2}
-  selectedPrime: {fileID: 0}
-  selectedLaser: {fileID: 0}
-  isLaser: 0
-  isPrism: 0
 --- !u!1 &998691597
 GameObject:
   m_ObjectHideFlags: 0
@@ -4462,6 +4403,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 218047744194477035, guid: 20ca710f79e223e4798a1451b894e307,
+        type: 3}
+      propertyPath: arCamera
+      value: 
+      objectReference: {fileID: 1579249548}
+    - target: {fileID: 218047744194477035, guid: 20ca710f79e223e4798a1451b894e307,
+        type: 3}
+      propertyPath: menuLaserGameobject
+      value: 
+      objectReference: {fileID: 2092700403}
+    - target: {fileID: 218047744194477035, guid: 20ca710f79e223e4798a1451b894e307,
+        type: 3}
+      propertyPath: menuPrismeGameobject
+      value: 
+      objectReference: {fileID: 602179603}
     - target: {fileID: 5941313409045388973, guid: 20ca710f79e223e4798a1451b894e307,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4525,11 +4481,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 8559542023318967051, guid: 20ca710f79e223e4798a1451b894e307,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 994940557}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 20ca710f79e223e4798a1451b894e307, type: 3}
 --- !u!1 &1234134700
 GameObject:
@@ -6476,7 +6428,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 994940557}
         m_TargetAssemblyTypeName: PrismTouchHandler, Assembly-CSharp
-        m_MethodName: ChangeToGlass
+        m_MethodName: ChangeToPrism1
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -6837,7 +6789,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 994940557}
         m_TargetAssemblyTypeName: PrismTouchHandler, Assembly-CSharp
-        m_MethodName: ChangeToDiamond
+        m_MethodName: ChangeToLaser2
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -7306,6 +7258,45 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1889191745}
   m_CullTransparentMesh: 1
+--- !u!21 &1937556651
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: UI/RoundedCorners/RoundedCorners
+  m_Shader: {fileID: 4800000, guid: 0bd2ec5d73751e34a814274a454bec41, type: 3}
+  m_Parent: {fileID: 0}
+  m_ModifiedSerializedProperties: 0
+  m_ValidKeywords: []
+  m_InvalidKeywords: []
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_LockedProperties: 
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
+    m_Floats:
+    - _ColorMask: 15
+    - _Stencil: 0
+    - _StencilComp: 8
+    - _StencilOp: 0
+    - _StencilReadMask: 255
+    - _StencilWriteMask: 255
+    - _UseUIAlphaClip: 0
+    m_Colors:
+    - _WidthHeightRadius: {r: 1024, g: 500, b: 40, a: 0}
+  m_BuildTextureStacks: []
 --- !u!1 &2025325718
 GameObject:
   m_ObjectHideFlags: 0
@@ -7733,7 +7724,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 994940557}
         m_TargetAssemblyTypeName: PrismTouchHandler, Assembly-CSharp
-        m_MethodName: ChangeToDiamond
+        m_MethodName: ChangeToPrism2
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -7983,152 +7974,14 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2112515347}
   m_CullTransparentMesh: 1
---- !u!1001 &2060593874488542246
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 5411937918791974883, guid: 73f1e6a3d46ffed4e865e59978bf88b8,
-        type: 3}
-      propertyPath: m_Name
-      value: Laser3
-      objectReference: {fileID: 0}
-    - target: {fileID: 6149661269687508911, guid: 73f1e6a3d46ffed4e865e59978bf88b8,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 70.798
-      objectReference: {fileID: 0}
-    - target: {fileID: 6149661269687508911, guid: 73f1e6a3d46ffed4e865e59978bf88b8,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0.048
-      objectReference: {fileID: 0}
-    - target: {fileID: 6149661269687508911, guid: 73f1e6a3d46ffed4e865e59978bf88b8,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -1161.5742
-      objectReference: {fileID: 0}
-    - target: {fileID: 6149661269687508911, guid: 73f1e6a3d46ffed4e865e59978bf88b8,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6149661269687508911, guid: 73f1e6a3d46ffed4e865e59978bf88b8,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6149661269687508911, guid: 73f1e6a3d46ffed4e865e59978bf88b8,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6149661269687508911, guid: 73f1e6a3d46ffed4e865e59978bf88b8,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6149661269687508911, guid: 73f1e6a3d46ffed4e865e59978bf88b8,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6149661269687508911, guid: 73f1e6a3d46ffed4e865e59978bf88b8,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6149661269687508911, guid: 73f1e6a3d46ffed4e865e59978bf88b8,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 73f1e6a3d46ffed4e865e59978bf88b8, type: 3}
---- !u!1001 &6484383868724893898
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 1070443575313840987, guid: 9a864ca8fea7318429e91ba16ccc7c6e,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 70.6261
-      objectReference: {fileID: 0}
-    - target: {fileID: 1070443575313840987, guid: 9a864ca8fea7318429e91ba16ccc7c6e,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0.028094761
-      objectReference: {fileID: 0}
-    - target: {fileID: 1070443575313840987, guid: 9a864ca8fea7318429e91ba16ccc7c6e,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -1161.5742
-      objectReference: {fileID: 0}
-    - target: {fileID: 1070443575313840987, guid: 9a864ca8fea7318429e91ba16ccc7c6e,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1070443575313840987, guid: 9a864ca8fea7318429e91ba16ccc7c6e,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1070443575313840987, guid: 9a864ca8fea7318429e91ba16ccc7c6e,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1070443575313840987, guid: 9a864ca8fea7318429e91ba16ccc7c6e,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1070443575313840987, guid: 9a864ca8fea7318429e91ba16ccc7c6e,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1070443575313840987, guid: 9a864ca8fea7318429e91ba16ccc7c6e,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1070443575313840987, guid: 9a864ca8fea7318429e91ba16ccc7c6e,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6344139564555257565, guid: 9a864ca8fea7318429e91ba16ccc7c6e,
-        type: 3}
-      propertyPath: m_Name
-      value: Laser2
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 9a864ca8fea7318429e91ba16ccc7c6e, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 29308677}
   - {fileID: 1799243979}
-  - {fileID: 860600802}
-  - {fileID: 636426594}
   - {fileID: 1360877745}
   - {fileID: 277658859}
   - {fileID: 1226836697}
-  - {fileID: 6484383868724893898}
-  - {fileID: 2060593874488542246}
+  - {fileID: 860600802}
+  - {fileID: 636426594}

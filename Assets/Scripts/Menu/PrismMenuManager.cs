@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PrismMenuManager : MonoBehaviour
 {
+    [Header("Prism UI Elements")]
     [SerializeField] private GameObject selectPrismButton;
     [SerializeField] private GameObject selectPrismShape;
     [SerializeField] private GameObject prismMatEmpty;

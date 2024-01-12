@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class PrismTouchHandler : MonoBehaviour
 {
+    [SerializeField] private CustomImageTracker imageTrackeur;
+
     [Header("Setup")]
     [SerializeField] private GameObject menuPrismeGameobject;
     [SerializeField] private GameObject menuLaserGameobject;
@@ -12,6 +14,12 @@ public class PrismTouchHandler : MonoBehaviour
 
     [Header("Matérials")]
     [SerializeField] private Material[] PrismMat;
+
+    [Header("Prism Shapes")]
+    [SerializeField] private GameObject[] prisms;
+
+    [Header("Laser Shapes")]
+    [SerializeField] private GameObject[] lasers;
 
 
     [HideInInspector] public GameObject selectedPrime;
@@ -67,6 +75,7 @@ public class PrismTouchHandler : MonoBehaviour
         }
     }
 
+    ////////////////////////////////////////////////// MATERIALS///////////////////////////////
     public void ChangeToGlass()
     {
         if (selectedPrime != null)
@@ -113,5 +122,63 @@ public class PrismTouchHandler : MonoBehaviour
         {
             selectedPrime.GetComponent<MeshRenderer>().material = PrismMat[5];
         }
+    }
+
+    ////////////////////////////////////////////////// Prism Shape///////////////////////////////
+
+    public void ChangeToPrism1()
+    {
+        GameObject newPrism;
+        newPrism = Instantiate(prisms[0], new Vector3(selectedPrime.transform.position.x, selectedPrime.transform.position.y, selectedPrime.transform.position.z), Quaternion.identity);
+        Destroy(selectedPrime);
+        selectedPrime = newPrism;
+        imageTrackeur.newPrisme = selectedPrime;
+    }
+
+    public void ChangeToPrism2()
+    {
+        GameObject newPrism;
+        newPrism = Instantiate(prisms[1], new Vector3(selectedPrime.transform.position.x, selectedPrime.transform.position.y, selectedPrime.transform.position.z), Quaternion.identity);
+        Destroy(selectedPrime);
+        selectedPrime = newPrism;
+        imageTrackeur.newPrisme = selectedPrime;
+    }
+
+    public void ChangeToPrism3()
+    {
+        GameObject newPrism;
+        newPrism = Instantiate(prisms[2], new Vector3(selectedPrime.transform.position.x, selectedPrime.transform.position.y, selectedPrime.transform.position.z), Quaternion.identity);
+        Destroy(selectedPrime);
+        selectedPrime = newPrism;
+        imageTrackeur.newPrisme = selectedPrime;
+    }
+
+    ////////////////////////////////////////////////// LASERS///////////////////////////////
+
+    public void ChangeToLaser1()
+    {
+        GameObject newLaser;
+        newLaser = Instantiate(lasers[0], new Vector3(selectedLaser.transform.position.x, selectedLaser.transform.position.y, selectedLaser.transform.position.z), Quaternion.identity);
+        Destroy(selectedLaser);
+        selectedLaser = newLaser;
+        imageTrackeur.newLaser = selectedLaser;
+    }
+
+    public void ChangeToLaser2()
+    {
+        GameObject newLaser;
+        newLaser = Instantiate(lasers[1], new Vector3(selectedLaser.transform.position.x, selectedLaser.transform.position.y, selectedLaser.transform.position.z), Quaternion.identity);
+        Destroy(selectedLaser);
+        selectedLaser = newLaser;
+        imageTrackeur.newLaser = selectedLaser;
+    }
+
+    public void ChangeToLaser3()
+    {
+        GameObject newLaser;
+        newLaser = Instantiate(lasers[2], new Vector3(selectedLaser.transform.position.x, selectedLaser.transform.position.y, selectedLaser.transform.position.z), Quaternion.identity);
+        Destroy(selectedLaser);
+        selectedLaser = newLaser;
+        imageTrackeur.newLaser = selectedLaser;
     }
 }

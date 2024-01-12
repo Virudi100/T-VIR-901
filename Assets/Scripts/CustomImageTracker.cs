@@ -8,11 +8,11 @@ public class CustomImageTracker : MonoBehaviour
     [SerializeField] private ARTrackedImageManager manager;
 
     [Header("Prefabs")]
-    [SerializeField] private GameObject[] laserArray;
-    [SerializeField] private GameObject[] prismeArray;
+    [SerializeField] private GameObject baseLaser;
+    [SerializeField] private GameObject basePrism;
 
-    private GameObject newLaser;
-    private GameObject newPrisme;
+    [HideInInspector] public GameObject newLaser;
+    [HideInInspector] public GameObject newPrisme;
 
 
     private void OnEnable()
@@ -31,11 +31,11 @@ public class CustomImageTracker : MonoBehaviour
         {
             if (addedImg.referenceImage.name == "Laser")
             {
-                newLaser = Instantiate(laserArray[0], addedImg.transform.position, UnityEngine.Quaternion.identity);
+                newLaser = Instantiate(baseLaser, addedImg.transform.position, UnityEngine.Quaternion.identity);
             }
             if (addedImg.referenceImage.name == "Prism")
             {
-                newPrisme = Instantiate(prismeArray[0], addedImg.transform.position, UnityEngine.Quaternion.identity);
+                newPrisme = Instantiate(basePrism, addedImg.transform.position, UnityEngine.Quaternion.identity);
             }
         }
 
