@@ -14,6 +14,8 @@ TagManager:
   - Laser
   - Bullet
   - Handle
+  - Laser2
+  - Laser3
   layers:
   - Default
   - TransparentFX
