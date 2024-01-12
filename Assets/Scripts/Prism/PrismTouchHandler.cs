@@ -11,15 +11,14 @@ public class PrismTouchHandler : MonoBehaviour
     [SerializeField] private Camera arCamera;
 
     [Header("Matérials")]
-    [SerializeField] private Material diamondMat;
-    [SerializeField] private Material glassMat;
+    [SerializeField] private Material[] PrismMat;
 
 
     [HideInInspector] public GameObject selectedPrime;
     [HideInInspector] public GameObject selectedLaser;
 
-    public bool isLaser = false;
-    public bool isPrism = false;
+    [HideInInspector] public bool isLaser = false;
+    [HideInInspector] public bool isPrism = false;
 
 
     void Start()
@@ -68,19 +67,51 @@ public class PrismTouchHandler : MonoBehaviour
         }
     }
 
-    public void ChangeToDiamond()
-    {
-        if (selectedPrime != null)
-        {
-            selectedPrime.GetComponent<MeshRenderer>().material = diamondMat;
-        }
-    }
-
     public void ChangeToGlass()
     {
         if (selectedPrime != null)
         {
-            selectedPrime.GetComponent<MeshRenderer>().material = glassMat;
+            selectedPrime.GetComponent<MeshRenderer>().material = PrismMat[0];
+        }
+    }
+
+    public void ChangeToDiamond()
+    {
+        if (selectedPrime != null)
+        {
+            selectedPrime.GetComponent<MeshRenderer>().material = PrismMat[1];
+        }
+    }
+
+    public void ChangeToRuby()
+    {
+        if (selectedPrime != null)
+        {
+            selectedPrime.GetComponent<MeshRenderer>().material = PrismMat[2];
+        }
+    }
+
+    public void ChangeToAmethyste()
+    {
+        if (selectedPrime != null)
+        {
+            selectedPrime.GetComponent<MeshRenderer>().material = PrismMat[3];
+        }
+    }
+
+    public void ChangeToWater()
+    {
+        if (selectedPrime != null)
+        {
+            selectedPrime.GetComponent<MeshRenderer>().material = PrismMat[4];
+        }
+    }
+
+    public void ChangeToHuile()
+    {
+        if (selectedPrime != null)
+        {
+            selectedPrime.GetComponent<MeshRenderer>().material = PrismMat[5];
         }
     }
 }
