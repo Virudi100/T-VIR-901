@@ -15,11 +15,11 @@ public class ManageAnimations : MonoBehaviour
 
 
      public bool isPlaying = false;
+    private bool goingFast = false;
 
     private void Start()
     {
         UpdateIcon();
-        //toggleButton.onClick.AddListener(ToggleState);
     }
 
     public void ToggleState()
@@ -47,6 +47,20 @@ public class ManageAnimations : MonoBehaviour
             //Time.timeScale = 0f;
             pauseModeBubble.gameObject.SetActive(true);
             playModeBubble.gameObject.SetActive(false);
+        }
+    }
+    
+    public void FForward()
+    {
+        if(!goingFast)
+        {
+            goingFast = true;
+            Time.timeScale = 4.0f;
+        }
+        else
+        {
+            goingFast =false;
+            Time.timeScale = 1.0f;
         }
     }
 }
