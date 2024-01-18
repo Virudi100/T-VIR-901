@@ -12,6 +12,8 @@ public class ManageSliderHandleColor : MonoBehaviour
     // Drag & drop handle
     public UnityEngine.UI.Image handle;
 
+    [SerializeField] private ColorContainer colorCont;
+
     public void Start()
     {
         slider.onValueChanged.AddListener(delegate { ValueChangeCheck(); });
@@ -21,5 +23,7 @@ public class ManageSliderHandleColor : MonoBehaviour
     public void ValueChangeCheck()
     {
         handle.color = Color.HSVToRGB(slider.value, 1, 1);
+
+        colorCont.handleColor = handle.color;
     }
 }

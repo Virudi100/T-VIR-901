@@ -15,6 +15,7 @@ TagManager:
   - Handle
   - Laser2
   - Laser3
+  - XROrigin
   layers:
   - Default
   - TransparentFX
