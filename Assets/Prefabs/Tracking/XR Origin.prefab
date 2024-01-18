@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 6115312187108837128}
   - component: {fileID: 8460522707881421574}
   - component: {fileID: 218047744194477035}
+  - component: {fileID: 3901527991387435173}
   m_Layer: 0
   m_Name: XR Origin
   m_TagString: Untagged
@@ -122,3 +123,15 @@ MonoBehaviour:
   selectedLaser: {fileID: 0}
   isLaser: 0
   isPrism: 0
+--- !u!114 &3901527991387435173
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8559542023318967051}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c3a17dc3f9055248af2174a48a152a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
