@@ -14,15 +14,15 @@ public class ManageAnimations : MonoBehaviour
     public GameObject playModeBubble;
 
 
-    private bool isPlaying = true;
+     public bool isPlaying = false;
 
     private void Start()
     {
         UpdateIcon();
-        toggleButton.onClick.AddListener(ToggleState);
+        //toggleButton.onClick.AddListener(ToggleState);
     }
 
-    void ToggleState()
+    public void ToggleState()
     {
         isPlaying = !isPlaying;
         UpdateIcon();
@@ -36,29 +36,17 @@ public class ManageAnimations : MonoBehaviour
         if (isPlaying)
         {
             toggleButton.image.sprite = pauseIcon;
-            Time.timeScale = 1f;
+            //Time.timeScale = 1f;
             playModeBubble.gameObject.SetActive(true);
             pauseModeBubble.gameObject.SetActive(false);
         }
-
-        else
+         else
         {
-            toggleButton.image.sprite = playIcon;
-            Time.timeScale = 0f;
             isPlaying = false;
+            toggleButton.image.sprite = playIcon;
+            //Time.timeScale = 0f;
             pauseModeBubble.gameObject.SetActive(true);
             playModeBubble.gameObject.SetActive(false);
         }
-
-
     }
-
-    void StopAnimation()
-    {
-        if (!isPlaying)
-        {
-            Time.timeScale = 0f;
-        }
-    }
- 
 }
