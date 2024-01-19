@@ -35,7 +35,7 @@ public class CustomImageTracker : MonoBehaviour
             }
             if (addedImg.referenceImage.name == "Prism")
             {
-                newPrisme = Instantiate(basePrism, addedImg.transform.position, UnityEngine.Quaternion.identity);
+                newPrisme = Instantiate(basePrism, addedImg.transform.position, basePrism.transform.rotation);
             }
         }
 

@@ -17,6 +17,7 @@ TagManager:
   - Laser3
   - XROrigin
   - AnimScript
+  - ARCamera
   layers:
   - Default
   - TransparentFX

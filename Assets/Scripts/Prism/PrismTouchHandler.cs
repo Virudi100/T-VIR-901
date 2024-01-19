@@ -81,6 +81,9 @@ public class PrismTouchHandler : MonoBehaviour
         if (selectedPrime != null)
         {
             selectedPrime.GetComponent<MeshRenderer>().material = PrismMat[0];
+            selectedPrime.GetComponent<IndiceDeRefraction>().iDR = 1;
+            selectedPrime.GetComponent<IndiceDeRefraction>().DisplayIdR();
+            selectedPrime.GetComponent<IndiceDeRefraction>().refractionColor = new Color32(255, 255, 255,1);
         }
     }
 
@@ -89,6 +92,9 @@ public class PrismTouchHandler : MonoBehaviour
         if (selectedPrime != null)
         {
             selectedPrime.GetComponent<MeshRenderer>().material = PrismMat[1];
+            selectedPrime.GetComponent<IndiceDeRefraction>().iDR = 2;
+            selectedPrime.GetComponent<IndiceDeRefraction>().DisplayIdR();
+            selectedPrime.GetComponent<IndiceDeRefraction>().refractionColor = new Color32(135, 206, 235,1);
         }
     }
 
@@ -97,6 +103,9 @@ public class PrismTouchHandler : MonoBehaviour
         if (selectedPrime != null)
         {
             selectedPrime.GetComponent<MeshRenderer>().material = PrismMat[2];
+            selectedPrime.GetComponent<IndiceDeRefraction>().iDR = 3;
+            selectedPrime.GetComponent<IndiceDeRefraction>().DisplayIdR();
+            selectedPrime.GetComponent<IndiceDeRefraction>().refractionColor = new Color32(224, 17, 95,1);
         }
     }
 
@@ -105,6 +114,9 @@ public class PrismTouchHandler : MonoBehaviour
         if (selectedPrime != null)
         {
             selectedPrime.GetComponent<MeshRenderer>().material = PrismMat[3];
+            selectedPrime.GetComponent<IndiceDeRefraction>().iDR = 2.5f;
+            selectedPrime.GetComponent<IndiceDeRefraction>().DisplayIdR();
+            selectedPrime.GetComponent<IndiceDeRefraction>().refractionColor = new Color32(136, 77, 167,1);
         }
     }
 
@@ -113,6 +125,9 @@ public class PrismTouchHandler : MonoBehaviour
         if (selectedPrime != null)
         {
             selectedPrime.GetComponent<MeshRenderer>().material = PrismMat[4];
+            selectedPrime.GetComponent<IndiceDeRefraction>().iDR = 1;
+            selectedPrime.GetComponent<IndiceDeRefraction>().DisplayIdR();
+            selectedPrime.GetComponent<IndiceDeRefraction>().refractionColor = new Color32(156, 211, 219,1);
         }
     }
 
@@ -121,6 +136,9 @@ public class PrismTouchHandler : MonoBehaviour
         if (selectedPrime != null)
         {
             selectedPrime.GetComponent<MeshRenderer>().material = PrismMat[5];
+            selectedPrime.GetComponent<IndiceDeRefraction>().iDR = 1.5f;
+            selectedPrime.GetComponent<IndiceDeRefraction>().DisplayIdR();
+            selectedPrime.GetComponent<IndiceDeRefraction>().refractionColor = new Color32(240, 181, 5,1);
         }
     }
 
@@ -129,7 +147,7 @@ public class PrismTouchHandler : MonoBehaviour
     public void ChangeToPrism1()
     {
         GameObject newPrism;
-        newPrism = Instantiate(prisms[0], new Vector3(selectedPrime.transform.position.x, selectedPrime.transform.position.y, selectedPrime.transform.position.z), Quaternion.identity);
+        newPrism = Instantiate(prisms[0], new Vector3(selectedPrime.transform.position.x, selectedPrime.transform.position.y, selectedPrime.transform.position.z), prisms[0].transform.rotation);
         Destroy(selectedPrime);
         selectedPrime = newPrism;
         imageTrackeur.newPrisme = selectedPrime;
@@ -138,7 +156,7 @@ public class PrismTouchHandler : MonoBehaviour
     public void ChangeToPrism2()
     {
         GameObject newPrism;
-        newPrism = Instantiate(prisms[1], new Vector3(selectedPrime.transform.position.x, selectedPrime.transform.position.y, selectedPrime.transform.position.z), Quaternion.identity);
+        newPrism = Instantiate(prisms[1], new Vector3(selectedPrime.transform.position.x, selectedPrime.transform.position.y, selectedPrime.transform.position.z), prisms[1].transform.rotation);
         Destroy(selectedPrime);
         selectedPrime = newPrism;
         imageTrackeur.newPrisme = selectedPrime;
@@ -147,7 +165,7 @@ public class PrismTouchHandler : MonoBehaviour
     public void ChangeToPrism3()
     {
         GameObject newPrism;
-        newPrism = Instantiate(prisms[2], new Vector3(selectedPrime.transform.position.x, selectedPrime.transform.position.y, selectedPrime.transform.position.z), Quaternion.identity);
+        newPrism = Instantiate(prisms[2], new Vector3(selectedPrime.transform.position.x, selectedPrime.transform.position.y, selectedPrime.transform.position.z), prisms[2].transform.rotation);
         Destroy(selectedPrime);
         selectedPrime = newPrism;
         imageTrackeur.newPrisme = selectedPrime;
