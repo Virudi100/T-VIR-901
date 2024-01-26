@@ -31,11 +31,8 @@ public class PrismTouchHandler : MonoBehaviour
 
     void Start()
     {
-
         menuPrismeGameobject.SetActive(false);
         menuLaserGameobject.SetActive(false);
-
-
     }
 
     private void FixedUpdate()

@@ -15,7 +15,7 @@ public class ManageAnimations : MonoBehaviour
     [SerializeField] private GameObject fForwardGif;
 
 
-     public bool isPlaying = false;
+    public bool isPlaying = false;
     private bool goingFast = false;
 
     private void Start()
@@ -28,9 +28,6 @@ public class ManageAnimations : MonoBehaviour
     {
         isPlaying = !isPlaying;
         UpdateIcon();
-
-        // Ici, ajoutez la logique pour mettre en pause ou reprendre le jeu
-        //StopAnimation()
     }
 
     void UpdateIcon()

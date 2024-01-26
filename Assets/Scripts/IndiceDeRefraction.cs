@@ -11,6 +11,6 @@ public class IndiceDeRefraction : MonoBehaviour
 
     public void DisplayIdR()
     {
-        text.text = "IdR = " + iDR;
+        text.text = "IdR = " + iDR;             //Affiche l'indice de refraction dans le text au dessus du prism
     }
 }

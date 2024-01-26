@@ -12,6 +12,6 @@ public class LookCamera : MonoBehaviour
 
     private void FixedUpdate()
     {
-        transform.LookAt(arCamera.transform.position);
+        transform.LookAt(arCamera.transform.position);      //Regarde la camera
     }
 }

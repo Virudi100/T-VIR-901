@@ -39,7 +39,7 @@ public class StartLazer : MonoBehaviour
         {
                 newbullet = Instantiate(bullet, gameObject.transform);                              //Créer la balle à l'emplacement de l'objet qui tien le script
                 newbullet.GetComponent<Rigidbody>().AddForce(newbullet.transform.forward * speed);  //Envoie la balle avec la puissance "speed" dans la direction forward
-                newbullet.transform.parent = null;                                                  //Clear la balle de sont parent
+                newbullet.transform.parent = null;                                                  //Clear la balle de son parent
                 yield return new WaitForSeconds(0.05f);                                             //Attend 0.05 sec puis continue la boucle    
         }
         isLoop = false;

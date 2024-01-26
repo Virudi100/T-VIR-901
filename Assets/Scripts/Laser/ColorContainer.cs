@@ -5,5 +5,5 @@ using UnityEngine.UI;
 
 public class ColorContainer : MonoBehaviour
 {
-    public Color handleColor;
+    public Color handleColor;   //stock la couleur du slider pour l'utiliser plus tard
 }
