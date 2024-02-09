@@ -30,6 +30,16 @@ public class LifeTime : MonoBehaviour
         {
             Destroy(bulletRebond.endPosition.gameObject);
         }
+
+        if(bulletRebond.presImpactPosition != null )
+        {
+            Destroy(bulletRebond.presImpactPosition.gameObject);
+        }
+        
+        if(bulletRebond.postImpactPosition != null )
+        {
+            Destroy(bulletRebond.postImpactPosition.gameObject);
+        }
         
         Destroy(gameObject);            //l'objet est détruit
 

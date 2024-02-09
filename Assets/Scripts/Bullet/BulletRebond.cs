@@ -1,5 +1,7 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.XR.OpenVR;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -11,7 +13,9 @@ public class BulletRebond : MonoBehaviour
 
     [Header("Rewind")]
     public Transform startPosition;
+    public Transform presImpactPosition;
     public Transform impactPosition;
+    public Transform postImpactPosition;
     public Transform endPosition;
     [SerializeField] private GameObject empty;
     [SerializeField] private ManageAnimations anims;
@@ -24,6 +28,8 @@ public class BulletRebond : MonoBehaviour
         anims = GameObject.FindGameObjectWithTag("AnimScript").GetComponent<ManageAnimations>();
         startPosition = Instantiate(empty,gameObject.transform).transform;
         startPosition.parent = null;
+
+        StartCoroutine(SetCP());
 
         //Adds a listener to the main slider and invokes a method when the value changes.
         mainSlider = GameObject.FindGameObjectWithTag("RewindSlider").GetComponent<Slider>();
@@ -80,23 +86,75 @@ public class BulletRebond : MonoBehaviour
     // Invoked when the value of the slider changes.
     public void ValueChangeCheck()
     {
-        //Par rapport a la position du slider la balle bouge vers une position
+        //END
 
-        if (mainSlider.value > 0.6f)
+        if (mainSlider.value > 0.9f)
+        {
+            gameObject.transform.position = endPosition.position;
+            print("Dans 1");
+        }
+        
+
+        //PO
+
+        if (mainSlider.value > 0.7f && mainSlider.value < 0.9f && postImpactPosition != null)
+        {
+            gameObject.transform.position = postImpactPosition.position;
+            print("Dans 0.75");
+        }
+        else if(postImpactPosition == null)
         {
             gameObject.transform.position = endPosition.position;
         }
+            
 
-        if (mainSlider.value > 0.4f && mainSlider.value < 0.6f && impactPosition != null)
+
+        //IMPACT
+
+        if (mainSlider.value > 0.4f && mainSlider.value < 0.7f && impactPosition != null)
         {
             gameObject.transform.position = impactPosition.position;
+            print("Dans 0.5");
         }
-        else
+        else if(impactPosition == null)
+        {
             gameObject.transform.position = endPosition.position;
+        }
+            
 
-        if (mainSlider.value >= 0 && mainSlider.value < 0.4f)
+
+        //PR
+
+        if (mainSlider.value > 0.2f && mainSlider.value < 0.4f && presImpactPosition != null)
+        {
+            gameObject.transform.position = presImpactPosition.position;
+            print("Dans 0.25");
+        }
+        else if(presImpactPosition == null)
+        {
+            gameObject.transform.position = endPosition.position;
+        }
+            
+
+        // START
+
+        if (mainSlider.value < 0.2f)
         {
             gameObject.transform.position = startPosition.position;
+            print("Dans 0");
         }
+        
+    }
+
+    IEnumerator SetCP()
+    {
+        yield return new WaitForSeconds(0.3f);
+        presImpactPosition = Instantiate(empty, gameObject.transform).transform;
+        presImpactPosition.parent = null;
+        yield return new WaitForSeconds(2f); //impact
+        postImpactPosition = Instantiate(empty, gameObject.transform).transform;
+        postImpactPosition.parent = null;
+
+        yield return null;
     }
 }
