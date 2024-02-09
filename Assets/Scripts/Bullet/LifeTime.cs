@@ -6,8 +6,8 @@ using UnityEngine;
 
 public class LifeTime : MonoBehaviour
 {
-    private int cooldown = 3;           //Determine le temps avant la destruction de l'objet
-    private bool isDying = false;       //Booleen permettant de lancé la sequence de destruction (à utilisé plus tard)
+ 
+    [SerializeField] private BulletRebond bulletRebond;
 
     private void Start()
     {
@@ -16,15 +16,21 @@ public class LifeTime : MonoBehaviour
 
     IEnumerator Dying()
     {
-        //isDying = true;                 //set le booleen à vrai pour évité le lancé plusieurs fois la séquence
-        int i = 0;                      // le int i, sert ici de cooldown actificiel auquel on va rajouter 1 a chaque passage de la boucle
-        
-        while(i < cooldown)             // tant que le i n'est pas egale au cooldown souhaité on lui rajoute 1 avec 1 secondes de pause entre chaque ajout
-        {
-            i++;
-            yield return new WaitForSeconds(1);
-        }
 
+        yield return new WaitForSeconds(3);
+
+        Destroy(bulletRebond.startPosition.gameObject);
+
+        if(bulletRebond.impactPosition != null )
+        {
+            Destroy(bulletRebond.impactPosition.gameObject);
+        }
+        
+        if(bulletRebond.endPosition != null)
+        {
+            Destroy(bulletRebond.endPosition.gameObject);
+        }
+        
         Destroy(gameObject);            //l'objet est détruit
 
         yield return null;

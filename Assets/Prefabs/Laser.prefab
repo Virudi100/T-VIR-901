@@ -95,7 +95,7 @@ GameObject:
   - component: {fileID: 6171638438232797581}
   m_Layer: 0
   m_Name: SpawnPoint
-  m_TagString: Untagged
+  m_TagString: StartPointLaser
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

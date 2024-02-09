@@ -15,7 +15,7 @@ public class ManageAnimations : MonoBehaviour
     [SerializeField] private GameObject fForwardGif;
 
 
-    public bool isPlaying = false;
+    [HideInInspector] public bool isPlaying = true;
     private bool goingFast = false;
 
     private void Start()
@@ -35,7 +35,7 @@ public class ManageAnimations : MonoBehaviour
         if (isPlaying)
         {
             toggleButton.image.sprite = pauseIcon;
-            //Time.timeScale = 1f;
+            Time.timeScale = 1f;
             playModeBubble.gameObject.SetActive(true);
             pauseModeBubble.gameObject.SetActive(false);
         }
@@ -43,7 +43,7 @@ public class ManageAnimations : MonoBehaviour
         {
             isPlaying = false;
             toggleButton.image.sprite = playIcon;
-            //Time.timeScale = 0f;
+            Time.timeScale = 0f;
             pauseModeBubble.gameObject.SetActive(true);
             playModeBubble.gameObject.SetActive(false);
         }

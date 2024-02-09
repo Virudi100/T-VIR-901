@@ -148,6 +148,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67babf49eb3ed9842be3f76bd8729f22, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bulletRebond: {fileID: 8327484762565580888}
 --- !u!114 &8327484762565580888
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -160,6 +161,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5787fb00a647bf41bbe24564f8ce7ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  startPosition: {fileID: 0}
+  impactPosition: {fileID: 0}
+  endPosition: {fileID: 0}
+  empty: {fileID: 1009813612905718799, guid: 5d24274622e836e4aade620839f3eb5f, type: 3}
 --- !u!114 &1504723873172450984
 MonoBehaviour:
   m_ObjectHideFlags: 0
