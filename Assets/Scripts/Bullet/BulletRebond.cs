@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 //Determine l'angle de rebond du laser selon la zone d'impact
 
@@ -15,12 +16,20 @@ public class BulletRebond : MonoBehaviour
     [SerializeField] private GameObject empty;
     [SerializeField] private ManageAnimations anims;
 
+    [SerializeField] private Slider mainSlider;
+
+
     private void Start()
     {
         anims = GameObject.FindGameObjectWithTag("AnimScript").GetComponent<ManageAnimations>();
         startPosition = Instantiate(empty,gameObject.transform).transform;
         startPosition.parent = null;
+
+        //Adds a listener to the main slider and invokes a method when the value changes.
+        mainSlider = GameObject.FindGameObjectWithTag("RewindSlider").GetComponent<Slider>();
+        mainSlider.onValueChanged.AddListener(delegate { ValueChangeCheck(); });
     }
+
 
     private void Update()
     {
@@ -65,6 +74,29 @@ public class BulletRebond : MonoBehaviour
                 gameObject.GetComponent<MeshRenderer>().material.color = other.transform.parent.gameObject.transform.parent.GetComponent<IndiceDeRefraction>().refractionColor; //Change la couleur du laser influencer par la couleur de refraction
                 rebonded = true;
             }
+        }
+    }
+
+    // Invoked when the value of the slider changes.
+    public void ValueChangeCheck()
+    {
+        //Par rapport a la position du slider la balle bouge vers une position
+
+        if (mainSlider.value > 0.6f)
+        {
+            gameObject.transform.position = endPosition.position;
+        }
+
+        if (mainSlider.value > 0.4f && mainSlider.value < 0.6f && impactPosition != null)
+        {
+            gameObject.transform.position = impactPosition.position;
+        }
+        else
+            gameObject.transform.position = endPosition.position;
+
+        if (mainSlider.value >= 0 && mainSlider.value < 0.4f)
+        {
+            gameObject.transform.position = startPosition.position;
         }
     }
 }

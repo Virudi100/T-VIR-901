@@ -19,6 +19,7 @@ TagManager:
   - AnimScript
   - ARCamera
   - StartPointLaser
+  - RewindSlider
   layers:
   - Default
   - TransparentFX
