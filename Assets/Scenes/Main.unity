@@ -870,6 +870,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: XR Origin
       objectReference: {fileID: 0}
+    - target: {fileID: 5510593482949896144, guid: 20ca710f79e223e4798a1451b894e307,
+        type: 3}
+      propertyPath: pauseScript
+      value: 
+      objectReference: {fileID: 2193379712137138705}
     - target: {fileID: 5719118300227378443, guid: 20ca710f79e223e4798a1451b894e307,
         type: 3}
       propertyPath: arCamera

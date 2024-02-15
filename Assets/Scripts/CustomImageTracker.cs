@@ -14,6 +14,8 @@ public class CustomImageTracker : MonoBehaviour
     [HideInInspector] public GameObject newLaser;
     [HideInInspector] public GameObject newPrisme;
 
+    [SerializeField] private ManageAnimations pauseScript;
+
 
     private void OnEnable()
     {
@@ -27,39 +29,42 @@ public class CustomImageTracker : MonoBehaviour
 
     private void OnTrackedImageChange(ARTrackedImagesChangedEventArgs args)
     {
-        foreach (ARTrackedImage addedImg in args.added)         //Quand l'image est détecté
+        if (pauseScript.isPlaying == true)
         {
-            if (addedImg.referenceImage.name == "Laser")
+            foreach (ARTrackedImage addedImg in args.added)         //Quand l'image est détecté
             {
-                newLaser = Instantiate(baseLaser, addedImg.transform.position, UnityEngine.Quaternion.identity);
+                if (addedImg.referenceImage.name == "Laser")
+                {
+                    newLaser = Instantiate(baseLaser, addedImg.transform.position, UnityEngine.Quaternion.identity);
+                }
+                if (addedImg.referenceImage.name == "Prism")
+                {
+                    newPrisme = Instantiate(basePrism, addedImg.transform.position, basePrism.transform.rotation);
+                }
             }
-            if (addedImg.referenceImage.name == "Prism")
-            {
-                newPrisme = Instantiate(basePrism, addedImg.transform.position, basePrism.transform.rotation);
-            }
-        }
 
-        foreach (ARTrackedImage updatedImg in args.updated)     //Le temps que l'image reste détecté
-        {
-            if (updatedImg.referenceImage.name == "Laser")
+            foreach (ARTrackedImage updatedImg in args.updated)     //Le temps que l'image reste détecté
             {
-                newLaser.transform.position = updatedImg.transform.position;
+                if (updatedImg.referenceImage.name == "Laser")
+                {
+                    newLaser.transform.position = updatedImg.transform.position;
+                }
+                if (updatedImg.referenceImage.name == "Prism")
+                {
+                    newPrisme.transform.position = updatedImg.transform.position;
+                }
             }
-            if (updatedImg.referenceImage.name == "Prism")
-            {
-                newPrisme.transform.position = updatedImg.transform.position;
-            }
-        }
 
-        foreach (ARTrackedImage removedImg in args.removed)   //Quand l'image n'est plus détecté
-        {
-            if (removedImg.referenceImage.name == "Laser")
+            foreach (ARTrackedImage removedImg in args.removed)   //Quand l'image n'est plus détecté
             {
-                Destroy(newLaser);
-            }
-            if (removedImg.referenceImage.name == "Prism")
-            {
-                Destroy(newPrisme);
+                if (removedImg.referenceImage.name == "Laser")
+                {
+                    Destroy(newLaser);
+                }
+                if (removedImg.referenceImage.name == "Prism")
+                {
+                    Destroy(newPrisme);
+                }
             }
         }
     }
