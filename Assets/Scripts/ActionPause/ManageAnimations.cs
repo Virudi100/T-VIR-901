@@ -14,6 +14,8 @@ public class ManageAnimations : MonoBehaviour
     public GameObject playModeBubble;
     [SerializeField] private GameObject fForwardGif;
 
+    public GameObject sliderRewind;
+
 
     [HideInInspector] public bool isPlaying = true;
     private bool goingFast = false;
@@ -38,10 +40,12 @@ public class ManageAnimations : MonoBehaviour
             Time.timeScale = 1f;
             playModeBubble.gameObject.SetActive(true);
             pauseModeBubble.gameObject.SetActive(false);
+            sliderRewind.gameObject.SetActive(false);
         }
          else
         {
             isPlaying = false;
+            sliderRewind.gameObject.SetActive(true);
             toggleButton.image.sprite = playIcon;
             Time.timeScale = 0f;
             pauseModeBubble.gameObject.SetActive(true);

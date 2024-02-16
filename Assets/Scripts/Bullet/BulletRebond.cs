@@ -32,7 +32,7 @@ public class BulletRebond : MonoBehaviour
         StartCoroutine(SetCP());
 
         //Adds a listener to the main slider and invokes a method when the value changes.
-        mainSlider = GameObject.FindGameObjectWithTag("RewindSlider").GetComponent<Slider>();
+        mainSlider = GameObject.FindGameObjectWithTag("AnimScript").GetComponent<ManageAnimations>().sliderRewind.GetComponent<Slider>();
         mainSlider.onValueChanged.AddListener(delegate { ValueChangeCheck(); });
     }
 
