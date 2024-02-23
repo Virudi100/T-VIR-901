@@ -22,6 +22,7 @@ public class ManageSliderHandleColor : MonoBehaviour
     // Invoked when the value of the slider changes.
     public void ValueChangeCheck()
     {
+        //Save slider color on color container
         handle.color = Color.HSVToRGB(slider.value, 1, 1);
 
         colorCont.handleColor = handle.color;

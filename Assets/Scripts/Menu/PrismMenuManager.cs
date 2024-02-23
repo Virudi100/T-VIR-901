@@ -13,6 +13,7 @@ public class PrismMenuManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //Setup ui on start
         selectPrismButton.SetActive(true);
         selectPrismShape.SetActive(true);
         prismMatEmpty.SetActive(false);
@@ -21,6 +22,7 @@ public class PrismMenuManager : MonoBehaviour
 
     public void ActivateShape()
     {
+        //Activate prism shape ui
         prismShapeEmpty.SetActive(true);
         prismMatEmpty.SetActive(false);
 
@@ -30,6 +32,7 @@ public class PrismMenuManager : MonoBehaviour
 
     public void ActivateMat()
     {
+        //Activate prism materials ui
         prismShapeEmpty.SetActive(false);
         prismMatEmpty.SetActive(true);
 
@@ -39,6 +42,7 @@ public class PrismMenuManager : MonoBehaviour
 
     public void DeactivateShape()
     {
+        //Deactivate prism shape ui
         prismShapeEmpty.SetActive(false);
 
         selectPrismButton.SetActive(true);
@@ -47,6 +51,7 @@ public class PrismMenuManager : MonoBehaviour
 
     public void DeactivateMat()
     {
+        //Deactivate prism materials ui
         prismMatEmpty.SetActive(false);
 
         selectPrismButton.SetActive(true);

@@ -5,8 +5,6 @@ using Unity.XR.OpenVR;
 using UnityEngine;
 using UnityEngine.UI;
 
-//Determine l'angle de rebond du laser selon la zone d'impact
-
 public class BulletRebond : MonoBehaviour
 {
     private bool rebonded = false;
@@ -25,10 +23,12 @@ public class BulletRebond : MonoBehaviour
 
     private void Start()
     {
+        //Create start position
         anims = GameObject.FindGameObjectWithTag("AnimScript").GetComponent<ManageAnimations>();
         startPosition = Instantiate(empty,gameObject.transform).transform;
         startPosition.parent = null;
 
+        //Start checkpoints coroutine
         StartCoroutine(SetCP());
 
         //Adds a listener to the main slider and invokes a method when the value changes.
@@ -39,6 +39,7 @@ public class BulletRebond : MonoBehaviour
 
     private void Update()
     {
+        //Create end point if game is pause
         if (anims.isPlaying == false && endPosition == null)
         {
             endPosition = Instantiate(empty, gameObject.transform).transform;
@@ -48,36 +49,36 @@ public class BulletRebond : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (!rebonded)  //Necessaire pour empecher le laser de rebondir sur l'autre face après avoir traversé le prisme
+        if (!rebonded)  //Avoid laser to hit another wall after alreadey touched one
         {
-            if (other.CompareTag("Prisme2Pente"))       //Quand le laser touche la pente du prisme 2
+            if (other.CompareTag("Prisme2Pente"))       //When laser collide with prism 2
             {
                 impactPosition = Instantiate(empty, gameObject.transform).transform;
                 impactPosition.parent = null;
 
-                gameObject.GetComponent<Rigidbody>().AddForce(Vector3.up * other.transform.parent.gameObject.GetComponent<IndiceDeRefraction>().iDR);      //Ajoute une force vers le haut influencer par l'indice de refraction
-                gameObject.GetComponent<MeshRenderer>().material.color = other.transform.parent.gameObject.GetComponent<IndiceDeRefraction>().refractionColor;  //Change la couleur du laser influencer par la couleur de refraction
+                gameObject.GetComponent<Rigidbody>().AddForce(Vector3.up * other.transform.parent.gameObject.GetComponent<IndiceDeRefraction>().iDR);      //Add up force multiply by refraction
+                gameObject.GetComponent<MeshRenderer>().material.color = other.transform.parent.gameObject.GetComponent<IndiceDeRefraction>().refractionColor;  //Change color using color refraction
                 rebonded = true;
             }
 
-            if (other.CompareTag("PrismePenteGauche"))  //Quand le laser touche la pente du prisme
+            if (other.CompareTag("PrismePenteGauche"))  //When laser collide with left slope
             {
                 impactPosition = Instantiate(empty, gameObject.transform).transform;
                 impactPosition.parent = null;
 
-                gameObject.GetComponent<Rigidbody>().AddForce(Vector3.up * other.transform.parent.gameObject.transform.parent.GetComponent<IndiceDeRefraction>().iDR);     //Ajoute une force vers le haut influencer par l'indice de refraction
-                gameObject.GetComponent<Rigidbody>().AddForce(Vector3.left * other.transform.parent.gameObject.transform.parent.GetComponent<IndiceDeRefraction>().iDR);   
-                gameObject.GetComponent<MeshRenderer>().material.color = other.transform.parent.gameObject.transform.parent.GetComponent<IndiceDeRefraction>().refractionColor; //Change la couleur du laser influencer par la couleur de refraction
+                gameObject.GetComponent<Rigidbody>().AddForce(Vector3.up * other.transform.parent.gameObject.transform.parent.GetComponent<IndiceDeRefraction>().iDR);     //Add up force multiply by refraction
+                gameObject.GetComponent<Rigidbody>().AddForce(Vector3.left * other.transform.parent.gameObject.transform.parent.GetComponent<IndiceDeRefraction>().iDR);   //Add left force multiply by refraction
+                gameObject.GetComponent<MeshRenderer>().material.color = other.transform.parent.gameObject.transform.parent.GetComponent<IndiceDeRefraction>().refractionColor; //Change color using color refraction
                 rebonded = true;
             }
-            if (other.CompareTag("PrismePenteDroite"))  //Quand le laser touche la pente du prisme
+            if (other.CompareTag("PrismePenteDroite"))  //When laser collide with right slope
             {
                 impactPosition = Instantiate(empty, gameObject.transform).transform;
                 impactPosition.parent = null;
 
-                gameObject.GetComponent<Rigidbody>().AddForce(Vector3.up * other.transform.parent.gameObject.transform.parent.GetComponent<IndiceDeRefraction>().iDR);     //Ajoute une force vers le haut influencer par l'indice de refraction
-                gameObject.GetComponent<Rigidbody>().AddForce(Vector3.right * other.transform.parent.gameObject.transform.parent.GetComponent<IndiceDeRefraction>().iDR);
-                gameObject.GetComponent<MeshRenderer>().material.color = other.transform.parent.gameObject.transform.parent.GetComponent<IndiceDeRefraction>().refractionColor; //Change la couleur du laser influencer par la couleur de refraction
+                gameObject.GetComponent<Rigidbody>().AddForce(Vector3.up * other.transform.parent.gameObject.transform.parent.GetComponent<IndiceDeRefraction>().iDR);     //Add up force multiply by refraction
+                gameObject.GetComponent<Rigidbody>().AddForce(Vector3.right * other.transform.parent.gameObject.transform.parent.GetComponent<IndiceDeRefraction>().iDR);   //Add right force multiply by refraction
+                gameObject.GetComponent<MeshRenderer>().material.color = other.transform.parent.gameObject.transform.parent.GetComponent<IndiceDeRefraction>().refractionColor; //Change color using color refraction
                 rebonded = true;
             }
         }
@@ -148,10 +149,17 @@ public class BulletRebond : MonoBehaviour
 
     IEnumerator SetCP()
     {
+        //Wait 0.3 sec
         yield return new WaitForSeconds(0.3f);
+
+        //Create pres impact point
         presImpactPosition = Instantiate(empty, gameObject.transform).transform;
         presImpactPosition.parent = null;
+
+        //Wait 2 sec
         yield return new WaitForSeconds(2f); //impact
+
+        //Create post impact point
         postImpactPosition = Instantiate(empty, gameObject.transform).transform;
         postImpactPosition.parent = null;
 

@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 
 public class ManageAnimations : MonoBehaviour
 {
+    [Header("UI Components")]
     public Sprite playIcon;
     public Sprite pauseIcon;
     public Button toggleButton;
@@ -16,13 +17,15 @@ public class ManageAnimations : MonoBehaviour
 
     public GameObject sliderRewind;
 
-
     [HideInInspector] public bool isPlaying = true;
     private bool goingFast = false;
 
     private void Start()
     {
+        //Disable gif on start
         fForwardGif.SetActive(false);
+
+        //Update icon if it's play or pause mode
         UpdateIcon();
     }
 
@@ -34,22 +37,29 @@ public class ManageAnimations : MonoBehaviour
 
     void UpdateIcon()
     {
-        if (isPlaying)
+        if (isPlaying)      //Is game is play
         {
+            //Change UI for play UI
             toggleButton.image.sprite = pauseIcon;
-            Time.timeScale = 1f;
             playModeBubble.gameObject.SetActive(true);
             pauseModeBubble.gameObject.SetActive(false);
             sliderRewind.gameObject.SetActive(false);
+
+            //Resume time in game
+            Time.timeScale = 1f;
         }
-         else
+         else              //If game is pause
         {
             isPlaying = false;
+
+            //Change UI for pause UI
             sliderRewind.gameObject.SetActive(true);
             toggleButton.image.sprite = playIcon;
-            Time.timeScale = 0f;
             pauseModeBubble.gameObject.SetActive(true);
             playModeBubble.gameObject.SetActive(false);
+
+            //Pause time in game
+            Time.timeScale = 0f;
         }
     }
     
@@ -58,14 +68,22 @@ public class ManageAnimations : MonoBehaviour
         if(!goingFast)
         {
             goingFast = true;
-            Time.timeScale = 4.0f;
+            
+            //Active gif
             fForwardGif.SetActive(true);
+
+            //Speed up time
+            Time.timeScale = 4.0f;
         }
         else
         {
             goingFast =false;
-            Time.timeScale = 1.0f;
+
+            //Desactive gif
             fForwardGif.SetActive(false);
+
+            //Resume normal time
+            Time.timeScale = 1.0f; 
         }
     }
 }

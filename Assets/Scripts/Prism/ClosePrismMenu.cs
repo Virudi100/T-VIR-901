@@ -9,7 +9,6 @@ using UnityEngine.XR.ARSubsystems;
 public class ClosePrismMenu : MonoBehaviour
 {
     public GameObject prismPanel;
- 
 
     public void CloseUi()
     {

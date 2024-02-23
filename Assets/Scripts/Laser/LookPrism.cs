@@ -2,19 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-//Permet au laser de regarder le prisme quand il est détecté dans la scène
-
 public class LookPrism : MonoBehaviour
 {
     private GameObject prismeGo;
 
     private void FixedUpdate()
     {
-        prismeGo = GameObject.FindWithTag("Prisme");    //Cherche l'objet Prisme dans la scène
+        prismeGo = GameObject.FindWithTag("Prisme");    //Find "Prisme" gameobject
 
-        if(prismeGo != null )       //Si l'objet est présent
+        if(prismeGo != null )       
         {
-            gameObject.transform.LookAt(prismeGo.transform.position);   //Le laser regarde le prisme
+            gameObject.transform.LookAt(prismeGo.transform.position);   //Laser lookat the prism
         }
     }
 }

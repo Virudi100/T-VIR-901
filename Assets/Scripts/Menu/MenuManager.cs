@@ -3,17 +3,17 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-//Ce script permet de changer de scène lorsque l'on appuie sur l'écran
+//Switch scene on touch screen
 
 public class MenuManager : MonoBehaviour
 {
     private void FixedUpdate()
     {
-        foreach (Touch touch in Input.touches)      //Pour chaque doigts qui touche l'écran
+        foreach (Touch touch in Input.touches)      //Foreach finger touching the screen
         {
-            if (touch.phase == TouchPhase.Began)    //Quand le doigt viens de commencer à toucher l'écran
+            if (touch.phase == TouchPhase.Began)    //When begin to touch the screen
             {
-                SceneManager.LoadScene(1);          //Lance la scéne avec l'index 1
+                SceneManager.LoadScene(1);          //Load scene with index 1
             }
         }
     }

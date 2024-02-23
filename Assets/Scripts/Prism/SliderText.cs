@@ -19,6 +19,7 @@ public class SliderText : MonoBehaviour
     // Invoked when the value of the slider changes.
     public void ValueChangeCheck()
     {
+        //Change size slider text
         Debug.Log(_slider.value);
         if (touchhandler.isLaser == true) {
             touchhandler.selectedLaser.gameObject.transform.localScale = new Vector3(_slider.value, _slider.value, _slider.value);
@@ -30,8 +31,5 @@ public class SliderText : MonoBehaviour
             touchhandler.selectedPrime.gameObject.transform.localScale = new Vector3(_slider.value, _slider.value, _slider.value);
             _sliderText.text = "Size: " + _slider.value.ToString();
         }
-        
     }
-
-
 }

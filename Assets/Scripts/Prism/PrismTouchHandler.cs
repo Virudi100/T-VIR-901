@@ -31,12 +31,14 @@ public class PrismTouchHandler : MonoBehaviour
 
     void Start()
     {
+        //Hide menu on start
         menuPrismeGameobject.SetActive(false);
         menuLaserGameobject.SetActive(false);
     }
 
     private void FixedUpdate()
     {
+        //if screen is touched
         if (Input.touchCount > 0)
         {
             Debug.Log("Je suis rentrée");
@@ -45,13 +47,16 @@ public class PrismTouchHandler : MonoBehaviour
 
             if (touch.phase == TouchPhase.Began)
             {
+                //Create raycast from screen
                 Ray ray = arCamera.ScreenPointToRay(touch.position);
                 RaycastHit hit;
 
                 if (Physics.Raycast(ray, out hit))
                 {
+                    //if collide with prism
                     if (hit.collider.tag == "Prisme")
                     {
+                        //Activate prism menu
                         Debug.Log("Prisme touché");
                         isPrism = true;
                         isLaser = false;
@@ -59,9 +64,10 @@ public class PrismTouchHandler : MonoBehaviour
                         menuPrismeGameobject.SetActive(true);
                         selectedPrime = hit.collider.gameObject;
                     }
-
+                    //if collide with laser
                     if (hit.collider.tag == "Laser")
                     {
+                        //Activate laser menu
                         isLaser = true;
                         isPrism = false;
                         menuLaserGameobject.SetActive(true);
@@ -72,7 +78,7 @@ public class PrismTouchHandler : MonoBehaviour
         }
     }
 
-    ////////////////////////////////////////////////// MATERIALS///////////////////////////////
+    ////////////////////////////////////////////////// MATERIALS //////////////////////////////////////////////////
     public void ChangeToGlass()
     {
         if (selectedPrime != null)
@@ -139,7 +145,7 @@ public class PrismTouchHandler : MonoBehaviour
         }
     }
 
-    ////////////////////////////////////////////////// Prism Shape///////////////////////////////
+    ////////////////////////////////////////////////// Prism Shape //////////////////////////////////////////////////
 
     public void ChangeToPrism1()
     {
@@ -168,7 +174,7 @@ public class PrismTouchHandler : MonoBehaviour
         imageTrackeur.newPrisme = selectedPrime;
     }
 
-    ////////////////////////////////////////////////// LASERS///////////////////////////////
+    ////////////////////////////////////////////////// LASERS //////////////////////////////////////////////////
 
     public void ChangeToLaser1()
     {

@@ -3,14 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.PlayerLoop;
 
-// Ce script permet au laser de tiré ses sphères & de les tirer en face de lui
-
 public class StartLazer : MonoBehaviour
 {
     [Header("Mise place")]
-    [SerializeField] private GameObject bullet;             //Stockage du modèle de la balle via la fenetre inspector de Unity
+    [SerializeField] private GameObject bullet;             //Stock bullet prefab
     
-    private int speed = 5;                                //Vitesse d'éjection de la balle
+    private int speed = 5;                                //Shoot speed
 
     private bool isLoop = false;
 
@@ -19,6 +17,7 @@ public class StartLazer : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //Find object with tag "AnimScript" and get ManageAnimations component
         animations = GameObject.FindGameObjectWithTag("AnimScript").GetComponent<ManageAnimations>();
     }
 
@@ -26,6 +25,7 @@ public class StartLazer : MonoBehaviour
     {
         if(animations.isPlaying == true && isLoop == false)
         {
+            //if game is playing -> laser shoot
             isLoop = true;
             StartCoroutine(Shooting());
         }
@@ -33,14 +33,14 @@ public class StartLazer : MonoBehaviour
 
     IEnumerator Shooting()
     {
-        GameObject newbullet;                               //Creer un objet pour stocker la balle instancié et pouvoir l'utilisé
+        GameObject newbullet;                               //Create object before instanciate
 
-        while(animations.isPlaying == true)                                       //Tant que le taser doit tirer
+        while(animations.isPlaying == true)                                       //while game is playing
         {
-                newbullet = Instantiate(bullet, gameObject.transform);                              //Créer la balle à l'emplacement de l'objet qui tien le script
-                newbullet.GetComponent<Rigidbody>().AddForce(newbullet.transform.forward * speed);  //Envoie la balle avec la puissance "speed" dans la direction forward
-                newbullet.transform.parent = null;                                                  //Clear la balle de son parent
-                yield return new WaitForSeconds(0.05f);                                             //Attend 0.05 sec puis continue la boucle    
+                newbullet = Instantiate(bullet, gameObject.transform);                              //Create bullet at current gameobject position
+                newbullet.GetComponent<Rigidbody>().AddForce(newbullet.transform.forward * speed);  //Add force multiply with speed value on forward direction
+                newbullet.transform.parent = null;                                                  //Clear parent
+                yield return new WaitForSeconds(0.05f);                                             //Wait 0.05sec 
         }
         isLoop = false;
         yield return null;

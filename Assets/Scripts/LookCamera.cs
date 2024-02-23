@@ -7,11 +7,13 @@ public class LookCamera : MonoBehaviour
     private GameObject arCamera;
     private void Start()
     {
+        //Find gameobject named "ARCamera" using a tag
         arCamera = GameObject.FindWithTag("ARCamera");
     }
 
     private void FixedUpdate()
     {
-        transform.LookAt(arCamera.transform.position);      //Regarde la camera
+        //Looking the camera
+        transform.LookAt(arCamera.transform.position);
     }
 }
